@@ -1,0 +1,10 @@
+{
+  "dependencies": {
+    "express": "^4.18.2",
+    "nodemon": "^2.0.20",
+    "sqlite3": "^5.1.2"
+  },
+  "scripts": {
+    "start": "node Backend/backendscript.js"
+  }
+}

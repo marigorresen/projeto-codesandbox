@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+    <link rel="stylesheet" href="../CSS/Chamados.css">
+    <title>Dados</title>
+    <link rel="stylesheet" href="../CSS/estilo.css">
+    <script src="https://kit.fontawesome.com/f5b8112d40.js" crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+</head>
+
+<body>
+    <nav>
+        <input type="checkbox" id="check">
+        <label for="check" class="checkBtn">
+            <img src="../IMG/barramenu.png" width="50px" height="50px">
+        </label>
+        <a href="/public/HTML/paginaObras.html"><label class="logo"><img src="../IMG/logoMRV_nova.png" width="162px"
+                    height="70px" alt="Logo Mrv"></label></a>
+        <ul>
+            <li><a class="" href="../HTML/pagina.html">Dados da Empresa</a></li>
+            <li><a href="../HTML/empreiteiraContrato.html">Contratos</a></li>
+            <li><a href="../HTML/Chamados.html">Chamados</a></li>
+            <li><a href="../HTML/perfil.html">Perfil</a></li>
+
+        </ul>
+    </nav>
+
+    <div class="container dados">
+
+        <h3>Dados da Empresa</h3>
+        <a href="../HTML/atualizaDadosempresa.html"><button type="button" class="link" id="acompanhar"
+                name="acompanhar">Alterar</button></a>
+
+        <div class="infosdados">
+
+            <div class="inputsdados">
+
+                <form id="paginaDados" name="formdadosempresa" action="/registrarDados" method="post" class="textfield">
+
+                    <label for="razaoSocial">Razão Social</label>
+                    <input type="text" name="razaoSocial" class="estiloinputdados" id="sera" disabled>
+                    <br />
+                    <label for="nomeFantasia">Nome Fantasia</label>
+                    <input type="text" name="nomeFantasia" class="estiloinputdados" disabled>
+                    <br />
+                    <label for="cnpj">CNPJ</label>
+                    <input type="number" name="cnpj" class="estiloinputdados" placeholder="10 Digitos" value=""
+                        disabled>
+                    <br />
+
+                </form>
+
+                
+
+            </div>
+        </div>
+    </div>
+
+
+    <script>
+
+        const urlPagina = "/readDados";
+        const divPagina = document.getElementById("paginaDados");
+
+        fetch(urlPagina)//faz a requisição
+            .then((response) => {
+                return response.json();
+            })
+            .then((data) => {
+                let saida = '';
+                let info = data;
+                info.map(function (info) {//map é um método que percorre o array
+                if(`${info.codDadosPrincipais}` == 1){
+                    saida += '<label for="razaoSocial">Razão Social</label><input type="text" name="razaoSocial" class="estiloinputdados" value="' + `${info.razaoSocial}` + '" disabled><br /><label for="nomeFantasia">Nome Fantasia</label><input type="text" name="nomeFantasia" class="estiloinputdados" value="' + `${info.nomeFantasia}` + '" disabled><br /><label for="cnpj">CNPJ</label><input type="number" name="cnpj" class="estiloinputdados" placeholder="10 Digitos" value="' + `${info.cnpj}` + '"   disabled><br /><label for="email">Email</label><input type="email" name="email" class="estiloinputdados" placeholder="10 Digitos" value="' + `${info.email}` + '"   disabled><br><label for="cnpj">CNPJ</label><input type="text" name="departamento" class="estiloinputdados"  value="' + `${info.departamento}` + '"   disabled><br>'
+                }
+                    
+                });
+                divPagina.innerHTML = saida;
+            })
+
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,372 @@
+/*Definição da fonte padrão utilizada no site, através de uma fonte baixada*/
+@font-face {
+    font-family: fontepadrao;
+    src: url(../Fontes/Fontes/Primária/Averta.woff)
+}
+
+.grid {
+    margin: 10%;
+    padding: 32px;
+    box-shadow: 5px 4px 5px black;
+    border: 1px solid black;
+    border-radius: 10px;
+    font-family: fontepadrao;
+}
+
+.texto .link {
+    background-color: #04844b;
+    color: white;
+    justify-content: flex-end;
+    height: 8vh;
+}
+
+
+
+.titulo {
+    color: #04844b;
+    margin: 10px;
+}
+
+.texto {
+    display: flex;
+    justify-content: space-between;
+}
+
+
+@media (max-width: 400px) {
+    .toggle-button {
+        display: flex;
+    }
+
+    .informacoes {
+        display: none;
+        width: 100%;
+    }
+
+    .informacoes.active {
+        display: flex;
+    }
+}
+
+
+
+.espaco {
+    padding: 5px;
+}
+
+
+.link {
+    padding: 7px;
+    height: 8vh;
+    background-color: #04844b;
+    color: white;
+    justify-content: flex-end;
+}
+
+/*Seletor universal de todos os elementos do HTML*/
+* {
+    padding: 0;
+    margin: 0;
+    text-decoration: none;
+    list-style: none;
+    box-sizing: border-box;
+    font-family: fontepadrao;
+}
+
+/*Definição dos atributos no corpo da página*/
+body {
+    font-family: montserrat;
+}
+
+/*BARRA DE NAVEGAÇÃO*/
+/*altura, largura e cor de fundo definidas*/
+nav {
+    background-color: #04844b;
+    height: 80px;
+    width: 100%;
+}
+
+/*altura, largura e margens do logo definidas*/
+label.logo {
+    height: 35px;
+    width: 45px;
+    margin-top: 5px;
+    padding: 0px 50px;
+}
+
+header {
+    background-color: #04844b;
+    display: flex;
+    height: 80px;
+}
+
+/*especificações da tag <ul> na barra de navegação*/
+nav ul {
+    float: right;
+    margin-right: 20px;
+}
+
+/*especificações da tag <li> dentro de <ul> na barra de navegação*/
+nav ul li{
+    display: inline-block;
+    line-height: 80px;
+    margin: 0 5px
+}
+
+/*especificações da tag <a> dentro de <li> e <ul> na barra de navegação*/
+nav ul li a{
+    text-decoration: none;
+    color: white;
+    font-size: 13px;
+    padding: 7px 13px;
+    border-radius: 3px;
+    text-transform: uppercase;
+    justify-content: center;
+    align-items: center;
+}
+
+/***********************/
+/*definição da cor do link da tag <a> quando o mouse passar por cima*/
+a.active,a:hover{
+    color: #ffa500;
+    text-decoration: none;
+    transition: 0.5s;
+}
+
+/*Definição do tamanho, borda e centralização de imagem*/
+.imagemRedonda {
+    height: 55px;
+    width: 55px;
+    border-radius: 50%;
+    border: 2px solid black;
+    justify-content: center;
+    align-items: center;
+}
+
+/*Botão de sidebar*/
+.checkBtn{
+    font-size: 30px;
+    color: white;
+    float: right;
+    line-height: 80px;
+    margin-right: 40px;
+    cursor: pointer;
+    display: none;
+}
+
+#check{
+    display: none;
+}
+
+/*Atributos modificados, especificos para telas de até 952px*/
+@media screen and (max-width: 952px) {
+    label.logo {
+        padding-left: 50px;
+    }
+
+    nav ul li a{
+        font-size: 13px;
+        
+    }
+
+}
+
+/*Atributos modificados, especificos para telas de até 858px*/
+@media screen and (max-width: 858px) {
+    .checkBtn {
+        display: block;
+    }
+
+    ul{
+        position: fixed;
+        width: 100%;
+        height: 100vh;  
+        background: #04844b;
+        top: 80px;
+        left: -100%;
+        text-align: center;
+        transition: all 0.5s;
+    }
+
+    nav ul li {
+        display: block;
+        margin: 50px 0;
+        text-align: center;
+        line-height: 30px;
+    }
+
+    nav ul li a{
+        font-size: 20px;
+    }
+
+    a:hover,a.active {
+        background: none;
+        color: orange;
+    }
+
+    nav ul li img{
+        display: none;
+    }
+
+    #check:checked ~ ul {
+        left: 0;
+
+    }
+
+}
+
+/*Atributos modificados, especificos para telas de até 600px*/
+@media screen and (max-width: 600px) {
+    .checkBtn {
+        display: block;
+    }
+
+    ul{
+        position: fixed;
+        width: 100%;
+        height: 100vh;  
+        background: #04844b;
+        top: 80px;
+        left: -100%;
+        text-align: center;
+        transition: all 0.5s;
+    }
+
+    nav ul li {
+        display: block;
+        margin: 50px 0;
+        text-align: center;
+        line-height: 30px;
+    }
+
+    nav ul li a{
+        font-size: 20px;
+    }
+
+    a:hover,a.active {
+        background: none;
+        color: orange;
+    }
+
+    nav ul li img{
+        display: none;
+    }
+
+    #check:checked ~ ul {
+        left: 0;
+
+    }
+
+    .grid{
+        justify-items: auto;
+        
+
+    }
+
+    .table-active {
+        font-size: 12px;
+    }
+
+
+    section .grid {
+        height: 20vh;
+        width: 20vw;
+    }
+
+    .texto {
+            font-size: 10px;   
+            
+    }
+
+    .texto .titulo {
+        font-size: 17px;    
+    }
+
+    .link {
+        height: 6.5vh;
+        font-size: 10px;
+        background-color: #04844b;
+        color: white;
+    }
+
+   
+    .texto .file {
+        display: none;
+    }
+}
+
+/*Atributos modificados, especificos para telas de até 400px*/
+@media screen and (max-width: 400px) {
+    .checkBtn {
+        display: block;
+    }
+
+    ul{
+        position: fixed;
+        width: 100%;
+        height: 100vh;  
+        background: #04844b;
+        top: 80px;
+        left: -100%;
+        text-align: center;
+        transition: all 0.5s;
+    }
+
+    nav ul li {
+        display: block;
+        margin: 50px 0;
+        text-align: center;
+        line-height: 30px;
+    }
+
+   
+
+    nav ul li a{
+        font-size: 20px;
+    }
+
+    a:hover,a.active {
+        background: none;
+        color: orange;
+    }
+
+    nav ul li img{
+        display: none;
+    }
+
+    #check:checked ~ ul {
+        left: 0;
+
+    }
+
+    .tabela-active {
+        font-size: 12px;
+    }
+
+
+    section .grid {
+        height: 20vh;
+        width: 20vw;
+    }
+
+    .texto {
+            font-size: 10px;   
+            
+    }
+
+    .texto .titulo {
+        font-size: 13px;    
+    }
+
+    .link {
+        height: 5.5vh;
+        font-size: 10px;
+        background-color: #04844b;
+        color: white;
+    }
+
+
+    .texto .file {
+        display: none;
+    }
+}

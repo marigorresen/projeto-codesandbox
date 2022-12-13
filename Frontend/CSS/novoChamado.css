@@ -1,0 +1,206 @@
+@font-face {
+    font-family: fontepadrao;
+    src: url(../Fontes/Fontes/Primária/Averta.woff)
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: fontepadrao;
+}
+
+
+body {
+    display: grid;
+    height: 100%;
+    place-items: center;
+}
+
+.wrapper {
+    height: 37% ;
+    width: 350px;
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 5px 5px 30px rgba(0,0,0,0.2) ;
+}
+
+.wrapper .title {
+    color: rgb(14, 1, 1);
+    line-height: 65px;
+    text-align: center;
+    background: #04844b;
+    font-size: 25px;
+    font-weight: 500px;
+    border-radius: 10px 10px 0 0;
+}
+
+.wrapper .box {
+    padding: 20px 30px;
+    background: #fff;
+    border-radius: 10px;
+}
+
+.wrapper .box label {
+    display: flex;
+    height: 53px;
+    width: 100%;
+    align-items: center;
+    border: 2px solid #04844b;
+    border-radius: 50px;
+    margin: 10px 0;
+    padding-left: 20px;
+    cursor: default;
+    transition: all 0.3 ease;
+}
+
+.wrapper .box label .dot {
+    height: 20px;
+    width: 20px;
+    background: #d9d9d9;
+    border-radius: 50%;
+    position: relative;
+}
+
+.box label .dot::before {
+    position: absolute;
+    content: "";
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(2);
+    width: 9px;
+    height: 9px;
+    border-radius: 50%;
+    transition: all 0.3 ease
+
+}
+
+#opcao-1:checked ~ .opcao-1 .dot::before,
+#opcao-2:checked ~ .opcao-2 .dot::before,
+#opcao-3:checked ~ .opcao-3 .dot::before,
+#opcao-4:checked ~ .opcao-4 .dot::before,
+#opcao-5:checked ~ .opcao-5 .dot::before{
+    background: #04844b;
+    transform: translate(-50%, -50%) scale(1);
+}
+
+.wrapper .box label .text {
+    color: #04844b;
+    font-size: 18px;
+    font-weight: 400px;
+    padding-left: 10px;
+    transition: color 0.3 ease;
+
+}
+#opcao-1:checked ~ .opcao-1,
+#opcao-2:checked ~ .opcao-2,
+#opcao-3:checked ~ .opcao-3,
+#opcao-4:checked ~ .opcao-4,
+#opcao-5:checked ~ .opcao-5{
+    background: #04844b;
+    border-color: #04844b;
+}
+
+#opcao-1:checked ~ .opcao-1 .text,
+#opcao-2:checked ~ .opcao-2 .text,
+#opcao-3:checked ~ .opcao-3 .text,
+#opcao-4:checked ~ .opcao-4 .text,
+#opcao-5:checked ~ .opcao-5 .text{
+    color: #fff;
+}
+
+nav {
+    background-color: #04844b;
+    height: 80px;
+    width: 100%;
+}
+
+label.logo {
+    height: 35px;
+    width: 45px;
+    margin-top: 7px;
+    padding: 0px 50px;
+}
+
+.wrapper .box input[type="radio"] {
+    display: none;
+
+}
+
+
+header {
+    background-color: #04844b;
+    display: flex;
+    height: 80px;
+}
+
+nav ul {
+    float: right;
+    margin-right: 20px;
+}
+
+nav ul li{
+    display: inline-block;
+    line-height: 80px;
+    margin: 0 5px
+}
+
+nav ul li a{
+    color: white;
+    font-size: 13px;
+    padding: 7px 13px;
+    border-radius: 3px;
+    text-transform: uppercase;
+    justify-content: center;
+    align-items: center;
+}
+
+
+a.active,a:hover{
+    background: #04844b ;
+    transition: 0.5s;
+}
+
+
+.imagemRedonda {
+    height: 55px;
+    width: 55px;
+    border-radius: 50%;
+    border: 2px solid black;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.checkBtn{
+    font-size: 30px;
+    color: white;
+    float: right;
+    line-height: 80px;
+    margin-right: 40px;
+    cursor: pointer;
+    display: none;
+}
+
+#check{
+    display: none;
+}
+
+
+
+.field-btns .next-1{
+    width: 100%;
+    height: calc(100% + 5px);
+    padding: 5px;
+    margin-top: 7px;
+    border: none;
+    background: #04844b;
+    color: rgb(10, 10, 10);
+    font-size: 18px;
+    font-size: 500;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    border: 1px solid black;
+    border-radius: 5px;
+}
+

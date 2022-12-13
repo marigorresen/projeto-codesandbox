@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../CSS/perfil.css">
+    <script src="../JS/navbar.js"></script>
+</head>
+
+<body>
+    <div id="principal">
+        <!-- Barra de navegação.  -->
+        <nav>
+            <!-- Icone que compacta as operações de navegação.  -->
+            <input type="checkbox" id="check">
+            <label for="check" class="checkBtn">
+                <img src="../IMG/barramenu.png" width="50px" height="50px">
+            </label>
+            <a href="/public/HTML/paginaObras.html"><label class="logo"><img src="../IMG/logoMRV_nova.png" width="162px"
+                        height="70px" alt="Logo Mrv"></label></a>
+            <ul>
+                <li><a class="" href="../HTML/pagina.html">Dados da Empresa</a></li>
+                <li><a href="../HTML/empreiteiraContrato.html">Contratos</a></li>
+                <li><a href="../HTML/Chamados.html">Chamados</a></li>
+                <li><a href="../HTML/perfil.html">Perfil</a></li>
+            </ul>
+        </nav>
+        <!-- Divisoria do meio da página.  -->
+        <div id="meio">
+            <img src="../IMG/perfil.png" class="fotoCircular">
+            <h1>Nome Empreiteiro</h1>
+        </div>
+        <!-- Divisoria do baixo da página.  -->
+        <div id="baixo">
+            <!-- Divisoria em 3 partes de informações.  -->
+            <div id="quadrado1" class="quadrado">
+                <!-- Link para página de contratos.  -->
+                <a href="../HTML/contratos.html" class="corFonte">
+                    <h1>CONTRATOS</h1>
+                    <br />
+                    <p>Você possui </p>
+                    <p id="quantContratos"></p>
+                    <p> contrato(s) ativo(s).</p>
+                </a>
+            </div>
+            <div id="quadrado3" class="quadrado">
+                <h1>DIRETRIZES</h1>
+                <br />
+                <!-- Links abrindo novo separador para o site da MRV.  -->
+                <a href="https://www.mrv.com.br/institucional/pt/a-mrv/programa-de-integridade" target="_blank"
+                    class="corFonte">
+                    <p>Programa de Integridade.</p>
+                </a>
+                <a href="https://www.mrv.com.br/sustentabilidade/pt" target="_blank" class="corFonte">
+                    <p>Sustentabilidade.</p>
+                </a>
+            </div>
+        </div>
+    </div>
+    <script>
+        const urlContratos = "/readContrato";
+        const urlDados = "/readDados";
+        const divNome = document.getElementById("meio");
+        const divContratos = document.getElementById("quantContratos");
+        let contratos;
+        let saidaNome = '';
+        let saida = 0;
+
+        fetch(urlContratos)
+            .then((response) => {
+                return response.json();
+            })
+            .then((data) => {
+                contratos = data;
+                contratos.map(function (obras) {
+                    saida += 1;
+                });
+                divContratos.innerHTML = saida;
+            });
+
+        fetch(urlDados)
+            .then((response) => {
+                return response.json();
+            })
+            .then((data) => {
+                nome = data;
+                nome.map(function (nome) {
+                    if(`${nome.codDadosPrincipais}` == 1){
+                        saidaNome += '<img src="../IMG/perfil.png" class="fotoCircular"><h1>' + `${nome.nomeFantasia}` + '</h1>'
+                    }
+                });
+                divNome.innerHTML = saidaNome;
+            });
+
+
+    </script>
+</body>
+
+</html>

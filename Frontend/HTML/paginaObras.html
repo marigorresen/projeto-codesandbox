@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Empreiteiro Portal</title>
+    <link rel="stylesheet" href="/public/CSS/style.css">
+    <link rel="stylesheet" href="/public/CSS/normalize.css">
+    <!--[if lt IE 9]>
+            <script src="../js/html5shiv.js"></script>
+        <![endif]-->
+</head>
+
+<body>
+    <!--INÍCIO TOPO-->
+    <header>
+        <a href="/public/HTML/paginaObras.html"><img src="/public/IMG/logoMRV_obra.png" id="logo"></a>
+        <nav>
+            <ul>
+                <li><a href="/public/HTML/perfil.html">PERFIL</a></li>
+                <li><a href="/public/HTML/Chamados.html">CHAMADOS</a></li>
+                <li><a href="/public/HTML/empreiteiraContrato.html">CONTRATOS</a></li>
+                <li><a href="/public/HTML/pagina.html">DADOS DA EMPRESA</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!--INÍCIO BARRA DE PESQUISA-->
+    <div id="barra-de-pesquisa">
+        <div id="semi-header">
+            <span id="frasezinha">Encontre o seu trabalho dos sonhos</span>
+            <div id="form">
+                <form>
+                    <select name="palavra-chave" id="keyword">
+                        <option selected disabled>Palavra-Chave</option>
+                        <option>Prédio</option>
+                        <option>Casa</option>
+                    </select> |
+                    <select name="prioridade" id="priority">
+                        <option selected disabled>Tipo de Prioridade</option>
+                        <option>Tipo 1</option>
+                        <option>Tipo 2</option>
+                        <option>Tipo 3</option>
+                    </select> |
+                    <select name="localização" id="place">
+                        <option selected disabled>Localização</option>
+                        <option>São Paulo</option>
+                        <option>Minas Gerais</option>
+                    </select> |
+                    <select name="setor" id="sector">
+                        <option selected disabled>Serviço</option>
+                        <option>Pintura</option>
+                        <option>Concreto</option>
+                        <option>Marcenaria</option>
+                    </select>
+                    <button type="submit" class="submit">Pesquisar</button>
+                </form>
+            </div>
+        </div>
+    </div>
+    <!--Fim barra de pesquisa-->
+
+    <!--INÍCIO CONTEÚDO-->
+    <div id="conteudo">
+
+        <!--INÍCIO PRINCIPAL-->
+        <div id="principal">
+            <div id="pesquisa">
+                <h3>Serviços</h3>
+                <div class="linha-grande"></div>
+            </div>
+            <div id="obras">
+            </div>
+        </div>
+        <!--Fim principal-->
+    </div>
+    <!--Fim do conteudo-->
+    <script>
+        const urlObras = "/readidObras";
+        const divObras = document.getElementById("obras");
+
+        fetch(urlObras)//faz a requisição
+            .then((response) => {
+                return response.json();
+            })
+            .then((data) => {
+                let saida = '';
+                let obras = data;
+                obras.map(function (obras) {//map é um método que percorre o array
+                    saida += '<article><section class="imagem"><img src="/public/IMG/predio1.jfif"></section><section class="informacoes"><h5>' + `${obras.nome_obra}` + '</h5><p>' + `${obras.descricao}` + '</p></section><br><section id="rodape-artigo">' + `${obras.localizacao}` + ' | ' + `${obras.tamanho}` + ' m<sup>2</sup></section></article>'
+                });
+                divObras.innerHTML = saida;
+            })
+
+    </script>
+</body>
+
+</html>

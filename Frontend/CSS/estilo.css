@@ -1,0 +1,300 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: fontepadrao;
+}
+
+/*Definição da fonte padrão utilizada no site, através de uma fonte baixada*/
+@font-face {
+    font-family: fontepadrao;
+    src: url(../Fontes/Fontes/Primária/Averta.woff);
+}
+
+.texto .link {
+    background-color: #04844b;
+    color: white;
+    justify-content: flex-end;
+    height: 8vh;
+}
+
+.link {
+    padding: 7px;
+    height: 7vh;
+    color: white;
+    justify-content: flex-end;
+}
+
+a:hover {
+    color: orange;
+    transition: 0.5s;
+}
+
+.container {
+    display: flex;
+    width: 100%;
+
+}
+
+a {
+    color: white;
+    font-size: 13px;
+    padding: 7px 13px;
+    border-radius: 3px;
+    text-transform: uppercase;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+}
+
+.hud {
+    display: flex;
+    background: #04844B;
+    align-items: flex-start;
+    padding: 1% 2%;
+    height: 10%;
+    justify-content: space-evenly;
+    width: 100%;
+}
+
+.logohud {
+    margin-right: 0%;
+    /*Diminuir essa margem em tlas menores*/
+}
+
+
+.menuhud {
+    color: aliceblue;
+    font-family: fontepadrao;
+    font-style: normal;
+    text-align: center;
+    width: 10%;
+    align-items: center;
+    justify-content: space-evenly;
+    display: flex;
+    margin: auto auto auto auto;
+}
+
+.fa-solid {
+    position: fixed;
+    left: -100%;
+}
+
+.fa-bars {
+    position: fixed;
+    left: -100%;
+}
+
+.fotoperfil {
+    background: #adca4f;
+    max-width: 100%;
+    height: auto;
+    overflow: hidden;
+    border-radius: 50%;
+    display: flex;
+}
+
+
+.dados {
+    background: #FBFBFB;
+    box-shadow: 0px 10px 13px rgba(0, 0, 0, 0.13);
+    border-radius: 10px;
+    width: 80%;
+    height: auto;
+    display: flex;
+    flex-wrap: wrap;
+    margin: auto;
+    margin-top: 10%;
+    /* aumentar o widht em telas menores*/
+}
+
+/*Definição de tamanho, alinhamento, espaçamento entre letra
+* margens e cores da tag h3 *
+*/
+h3 {
+    width: 40%;
+    text-align: center;
+    letter-spacing: 2px;
+    font-style: normal;
+    color: #04844B;
+    display: flex;
+    margin-left: 25%;
+    margin-right: auto;
+    margin-top: 3%;
+}
+
+#btn_solic_corr {
+    width: 20%;
+    background: #04844B;
+    border-radius: 5px;
+    margin-right: 10%;
+    margin-top: 3%;
+    font-style: normal;
+    font-size: 100%;
+    line-height: 100%;
+    text-align: center;
+    padding: 0.5%;
+
+    color: #FFFFFF;
+}
+
+.infosdados {
+    background: #FFFFFF;
+    box-shadow: 0px 10px 13px rgba(0, 0, 0, 0.13);
+    border-radius: 10px;
+
+    margin: auto;
+    margin-top: 5%;
+    width: 70%;
+    height: auto;
+
+}
+
+.inputsdados {
+    flex-direction: column;
+    letter-spacing: 0.09em;
+    color: #303030;
+    display: flex;
+    align-items: flex-start;
+    text-align: center;
+    margin-left: 5%;
+    margin-top: 3%;
+    margin-bottom: 10%;
+    margin-top: 3%;
+
+}
+
+.estiloinputdados {
+    border: 1px solid rgba(103, 103, 103, 0.7);
+    border-radius: 5px;
+    margin-bottom: 8%;
+    margin-top: 2%;
+    padding: 5px;
+    /*Diminuir porcentagem da margem em telas grandes*/
+}
+
+
+.subtitulosocios {
+    width: 30%;
+    text-align: center;
+    letter-spacing: 2px;
+    font-style: normal;
+    color: #04844B;
+    display: flex;
+    margin-left: 42%;
+    margin-right: 42%;
+    /* diminuir a margem esquerda para telas menores*/
+}
+
+.hudsocios {
+    background: #F4F4F4;
+    display: flex;
+    justify-content: space-between;
+
+    margin-bottom: 3%;
+    margin-top: 3%;
+
+}
+
+.hudsocios p {
+    width: 25%;
+    padding: 2% 4%;
+    margin-top: 2%;
+    margin-bottom: 2%;
+    border-color: #303030;
+
+
+}
+
+.dadossocios {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10%;
+}
+
+.resp {
+    width: 25%;
+    padding: 2% 4%;
+    margin-bottom: 5%;
+    border-color: #303030;
+
+}
+
+/*Atributos modificados para telas de até 590px*/
+@media screen and (max-width: 590px) {
+    body {
+        background-color: #a6c743;
+    }
+
+    a:hover,
+    a.active {
+        background: none;
+        color: orange;
+    }
+
+    .menuhud {
+        position: relative;
+        width: 0;
+    }
+
+    .menuhud p {
+        width: 0;
+        z-index: -1;
+    }
+
+    .menuhud ul {
+        width: 0;
+        z-index: -1;
+    }
+
+    .fa-solid {
+        position: relative;
+
+
+    }
+
+
+}
+
+@media screen and (max-width: 450px) {
+
+
+    .logohud {
+        margin-left: 0%;
+    }
+
+    .subtitulosocios {
+        margin-left: 32%;
+    }
+
+    #btn_solic_corr {
+        padding: 2%;
+        margin-right: 4%;
+        width: 25%;
+    }
+
+    .menuhud {
+        width: 5%;
+        font-size: 10px;
+        position: fixed;
+        left: -100%;
+    }
+
+    a:hover,
+    a.active {
+        background: none;
+        color: orange;
+    }
+
+    .fa-solid {
+        position: relative;
+        margin-top: 180%;
+        margin-left: -280%;
+        float: right;
+
+    }
+
+    /*ALINHAR NA DIREITA */
+
+
+}

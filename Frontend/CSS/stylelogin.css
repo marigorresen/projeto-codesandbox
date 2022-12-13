@@ -1,0 +1,153 @@
+@font-face {
+  font-family: fontepadrao;
+  src: url(../Fontes/Fontes/Primária/Averta.woff);
+}
+
+* {
+  font-family: fontepadrao;
+}
+
+body, html{
+  /*Tira as margens de todo body*/
+  margin: 0;
+}
+
+.main-login{
+  /* Seta height e width baseado na viewport do dispositivo*/
+  width: 100vw;
+  height: 100vh;
+  /* Define o background como um degrade de branco ate cinza */
+  background: linear-gradient(0deg, rgb(184, 182, 182), white);
+
+    /* Centraliza a DIV*/
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
+.right-login{
+  /* Seta height e width baseado na viewport do dispositivo*/
+  width: 50vh;
+  
+    /* Centraliza a DIV*/ 
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.card-login{
+   /* Centraliza a DIV e seta a height e widht baseado na viewport do dispositivo*/
+  width: 60%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+    /* setta o padding, propriedades visuais e cor do background da "caixa"*/
+  padding: 30px 35px;
+  background: white;
+  border-radius: 20px;
+  box-shadow: 0px 10px 40px rgba(0, 0, 0, 0.184);
+}
+
+/*A diferença entre os arquivos CSS normalmente vão ser na parte da H1, já que alguns textos não cabiam no tamanho pré determinado*/
+.card-login > h1{
+/* Customiza exclusivamente a H1 dentro da classe/div card-login*/
+  color: black;
+  font-weight: 800;
+  margin: 0;
+}
+
+.textfield{
+  /* Seta as propriedades da classe textfield em geral*/
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  margin: 10px, 0px;
+}
+
+.textfield > input{
+  /* Seta as propriedades da classe textfield, em especifico dos inputs*/
+  width: 100%;
+  border: none;
+  border-radius: 10px;
+  padding: 15px;
+  background: rgb(223, 222, 222);
+  font-size: 12pt;
+  box-shadow: 0px 10px 40px rgba(0, 0, 0, 0.184);
+  outline: none;
+  box-sizing: border-box;
+}
+
+.textfield > label{
+  /* Seta as propriedades da classe textfield, em especifico das labels*/
+color: black;
+margin-bottom: 10px;
+margin-top: 10px;
+}
+
+.btn-login{
+  /* Seta as propriedades do botao de login (avançar)*/
+ width: 100%;
+ padding: 16px 0px;
+ margin: 15px;
+ border: none;
+ border-radius: 10px;
+ background-color: #04844b;
+ color: white;
+ outline: none;
+ text-transform: uppercase;
+ font-weight: 800;
+ letter-spacing: 3px;
+ box-shadow: 0px 10px 40px -12px #04844b;
+ cursor:pointer;
+ /*Para setar as coisas para o Hover*/
+ display: inline-block;
+ transform: perspective(1px) translateZ(0);
+ position: relative;
+ transition: color 0.3s; 
+}
+/*seta um pseudo elemento para realizar o hover*/
+.btn-login:before {
+ /*seta as propriedades do hover*/
+ content: "";
+ position: absolute;
+ top: 0;
+ left: 0;
+ right: 0;
+ bottom: 0;
+ z-index: -1;
+ background: #ffde25;
+ transform: scaleX(0);
+ transform-origin: 0 50%;
+ transition: transform 0.3s ease-out;
+ box-shadow: 0px 10px 40px -12px #ffde25;
+ border-radius: 10px;
+}
+.btn-login:hover {
+ color: white;
+}
+.btn-login:hover:before {
+ transform: scaleX(1);
+}
+
+a{
+ /*Seta a cor do link para preto, diferente do azul original*/
+ color: black;
+ 
+}
+
+
+nav {
+ background-color: #04844b;
+ height: 80px;
+ width: 100%;
+}
+
+label.logo {
+ height: 35px;
+ width: 45px;
+ padding: 0px 50px;
+}

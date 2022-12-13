@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--Pega o arquivo css para estilizar o html-->
+    <link rel="stylesheet" href="../CSS/stylesquecisenha.css">
+    <title>Esqueci a senha</title>
+</head>
+
+<body>
+    <nav>
+        <label class="logo"><img src="../IMG/logomrvhud.png" width="150px" height="80px" alt="Logo Mrv"></label>
+    </nav>
+    <!--Cria as classes principais-->
+    <div class="main-login">
+        <div class="right-login">
+            <div class="card-login">
+                <h1>Esqueci a senha</h1>
+                <br>
+                <!--Cria a classe e label para inputar o email para recuperar a senha-->
+                <div class="textfield">
+                    <label for="usuario">&nbsp CNPJ/CPF</label>
+                    <input type="text" name="usuario" placeholder="Digite seu CNPJ/CPF">
+                    <!--Cria o botao para receber a senha por email-->
+                    <button class="btn-login" onclick="window.open('../HTML/login.html')">RECEBER POR E-MAIL</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>

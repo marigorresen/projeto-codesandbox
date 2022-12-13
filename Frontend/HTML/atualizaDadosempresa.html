@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--Pega como referencia o css para estilizar o html-->
+    <link rel="stylesheet" href="../CSS/cademprstyle.css">
+    <title>Atualizar Dados</title>
+</head>
+
+<body>
+    <nav>
+        <label class="logo"><img src="../IMG/logomrvhud.png" width="150px" height="80px" alt="Logo Mrv"></label>
+    </nav>
+    <!--Cria a classe principal-->
+    <div class="main-login" style="overflow: default ; height:100%;">
+        <div class="right-login" style="width: 40vw; margin-top: 5%; margin-bottom: auto;">
+            <div class="card-login" style="padding:50px 30px; height: 100vh; width: 50vw;">
+                <h1>Atualize os dados da empresa</h1>
+                <br>
+                <!--Cria a classe para inserir o CNPJ ou CPF e dados para cadastro-->
+                <form name="formdados" method="post" action="/atualizaDados?codDadosPrincipais=1" class="textfield">
+                    <label for="razaoSocial">&nbsp Razão Social</label>
+                    <input type="text" name="razaoSocial" placeholder="Exemplo: Crachá">
+
+                    <label for="nomeFantasia">&nbsp Nome Fantasia</label>
+                    <input type="text" name="nomeFantasia" placeholder="Descrição do Chamado">
+
+                    <label for="cnpj">&nbsp CNPJ</label>
+                    <input type="number" name="cnpj" placeholder="Descrição do Chamado">
+
+                    <label for="email">&nbsp Email</label>
+                    <input type="text" name="email" placeholder="Exemplo: Crachá">
+
+                    <label for="telefone">&nbsp Telefone</label>
+                    <input type="text" name="telefone" placeholder="Descrição do Chamado">
+
+                    <!--Cria o botao para atualizar-->
+
+                    <button class="btn-login">ATUALIZAR</button>
+
+                </form>
+
+            </div>
+        </div>
+    </div>
+    <script>
+    </script>
+</body>

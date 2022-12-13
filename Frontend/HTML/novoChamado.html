@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--Pega como referencia o css para estilizar o html-->
+    <link rel="stylesheet" href="../CSS/cademprstyle.css">
+    <title>Novo Chamado</title>
+</head>
+
+<body>
+    <nav>
+        <label class="logo"><img src="../IMG/logomrvhud.png" width="150px" height="80px" alt="Logo Mrv"></label>
+    </nav>
+    <!--Cria a classe principal-->
+    <div class="main-login">
+        <div class="right-login">
+            <div class="card-login">
+                <h1>Digite seu Chamado</h1>
+                <br>
+                <!--Cria a classe para inserir o CNPJ ou CPF para cadastro-->
+                <form name="form1" method="post" action="/registrarChamado" class="textfield">
+                    <label for="usuario">&nbsp Título do Chamado</label>
+                    <input type="text" name="titulo" placeholder="Exemplo: Crachá">
+
+                    <label for="usuario">&nbsp Nome da Empreiteira</label>
+                    <input type="text" name="status" placeholder="Empreiteira X">
+
+                    <label for="usuario">&nbsp Descrição do Chamado</label>
+                    <input type="text" name="descricao" placeholder="Descrição do Chamado">
+                    <!--Cria o botao para avançar-->
+                    <button class="btn-login">AVANÇAR</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
