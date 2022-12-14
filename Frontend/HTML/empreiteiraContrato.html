@@ -11,27 +11,38 @@
     <script src="https://kit.fontawesome.com/f5b8112d40.js" crossorigin="anonymous"></script>
     <script src="../JS/chamadosMobile.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <link rel="stylesheet" href="/public/CSS/home.css">
     <title>Contratos</title>
 </head>
 
 <body>
     <!-- Divisoria da barra de navegação.  -->
-    <nav>
-        <!-- Icone que compacta as operações de navegação.  -->
-        <input type="checkbox" id="check">
-        <label for="check" class="checkBtn">
-            <img src="../IMG/barramenu.png" width="50px" height="50px">
-        </label>
-        <!-- Imagem contendo o logo da MRV.  -->
-        <a href="/public/HTML/paginaObras.html"><label class="logo"><img src="../IMG/logoMRV_nova.png" width="162px"
-                    height="70px" alt="Logo Mrv"></label></a>
-        <ul>
-            <!-- Listas de opções do menu.  -->
-            <li><a class="" href="../HTML/pagina.html">Dados da Empresa</a></li>
-            <li><a href="../HTML/empreiteiraContrato.html">Contratos</a></li>
-            <li><a href="../HTML/Chamados.html">Chamados</a></li>
-            <li><a href="../HTML/perfil.html">Perfil</a></li>
-        </ul>
+    <nav class="navbar navbar-expand-lg bg-success sticky-top">
+        <div class="container">
+            <a class="navbar-brand" href="/public/HTML/paginaObras.html"">
+                <img src="/public/IMG/logoMRV_nova.png" width="150px" height="145px">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="../HTML/pagina.html">Dados da Empresa</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="../HTML/empreiteiraContrato.html">Contratos</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="../HTML/Chamados.html">Chamados</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="../HTML/perfil.html">Perfil</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
     </nav>
     <!-- Tabela  -->
     <section class="grid">
@@ -92,6 +103,7 @@
         }
 
     </script>
+    <script src="../JS/main.js"></script>
 </body>
 
 </html>

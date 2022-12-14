@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--Pega como referencia o css para estilizar o html-->
+    <link rel="stylesheet" href="../CSS/cademprstyle.css">
+    <title>Atualizar</title>
+</head>
+
+<body>
+    <nav>
+        <label class="logo"><img src="../IMG/logomrvhud.png" width="150px" height="80px" alt="Logo Mrv"></label>
+    </nav>
+    <!--Cria a classe principal-->
+    <div class="main-login">
+        <div class="right-login">
+            <div class="card-login">
+                <h1>Atualizar Obra</h1>
+                <br>
+                <!--Cria a classe para inserir o CNPJ ou CPF para cadastro-->
+                <div id="formUP">
+                    <form id="formulario" name="form2" method="post" action="/atualizaObras" class="textfield">
+                        <label for="usuario">&nbsp Nome da Obra</label>
+                        <input type="text" name="nome_obra" placeholder="Nome da Obra">
+                        <label for="usuario">&nbsp Tamanho</label>
+                        <input type="text" name="tamanho" placeholder="Tamanho da Obra">
+                        <label for="usuario">&nbsp Endereço</label>
+                        <input type="text" name="localizacao" placeholder="Endereço">
+                        <label for="usuario">&nbsp Serviços</label>
+                        <input type="text" name="setor_requisitado" placeholder="Serviços">
+                        <label for="usuario">&nbsp Vagas</label>
+                        <input type="text" name="vagas_requeridas" placeholder="Vagas">
+                        <label for="usuario">&nbsp Descrição</label>
+                        <input type="text" name="descricao" placeholder="Descrição do Chamado">
+                        <!--Cria o botao para avançar-->
+                        <button class="btn-login">AVANÇAR</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+            let form = document.getElementById("formulario");
+            let idObra = +window.location.search.replace('?', '');
+
+            form.action = '/atualizaObras?cod_cadastro_obra=' + idObra;
+    </script>
+    <script>
+        const urlObras = "/readidObras";
+        const divObras = document.getElementById("formUP");
+
+        fetch(urlObras)//faz a requisição
+            .then((response) => {
+                return response.json();
+            })
+            .then((data) => {
+                let saida = '';
+                let obras = data;
+                obras.map(function (obras) {//map é um método que percorre o array
+                    if(obras.cod_cadastro_obra == idObra){
+                        saida += '<form id="formulario" name="form2" method="post" action="/atualizaObras?cod_cadastro_obra=' + idObra + '" class="textfield"><label for="usuario">&nbsp Nome da Obra</label><input type="text" name="nome_obra" placeholder="' + `${obras.nome_obra}` + '"><label for="usuario">&nbsp Tamanho</label><input type="text" name="tamanho" placeholder="' + `${obras.tamanho}` + '"><label for="usuario">&nbsp Endereço</label><input type="text" name="localizacao" placeholder="' + `${obras.localizacao}` + '"><label for="usuario">&nbsp Serviços</label><input type="text" name="setor_requisitado" placeholder="' + `${obras.setor_requisitado}` + '"><label for="usuario">&nbsp Vagas</label><input type="text" name="vagas_requeridas" placeholder="' + `${obras.vagas_requeridas}` + '"><label for="usuario">&nbsp Descrição</label><input type="text" name="descricao" placeholder="' + `${obras.descricao}` + '"><!--Cria o botao para avançar--><button class="btn-login">AVANÇAR</button></form>'
+
+                    }
+                });
+                    
+                divObras.innerHTML = saida;
+            })
+    </script>
+</body>

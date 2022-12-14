@@ -7,18 +7,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!--Pega como referencia o css para estilizar o html-->
     <link rel="stylesheet" href="../CSS/cademprstyle.css">
+    <link rel="stylesheet" href="../CSS/Chamados.css">
     <title>Atualizar Dados</title>
 </head>
 
 <body>
     <nav>
-        <label class="logo"><img src="../IMG/logomrvhud.png" width="150px" height="80px" alt="Logo Mrv"></label>
+        <a href="/public/HTML/paginaObras.html"><label class="logo"><img src="../IMG/logomrvhud.png" width="150px" height="80px" alt="Logo Mrv"></label></a>
     </nav>
     <!--Cria a classe principal-->
     <div class="main-login" style="overflow: default ; height:100%;">
         <div class="right-login" style="width: 40vw; margin-top: 5%; margin-bottom: auto;">
             <div class="card-login" style="padding:50px 30px; height: 100vh; width: 50vw;">
-                <h1>Atualize os dados da empresa</h1>
+                <h1 style="margin-top: 11%;">Atualize os dados da empresa</h1>
                 <br>
                 <!--Cria a classe para inserir o CNPJ ou CPF e dados para cadastro-->
                 <form name="formdados" method="post" action="/atualizaDados?codDadosPrincipais=1" class="textfield">
@@ -26,20 +27,20 @@
                     <input type="text" name="razaoSocial" placeholder="Exemplo: Crachá">
 
                     <label for="nomeFantasia">&nbsp Nome Fantasia</label>
-                    <input type="text" name="nomeFantasia" placeholder="Descrição do Chamado">
+                    <input type="text" name="nomeFantasia" placeholder="Nome Fantasia da Empresa">
 
                     <label for="cnpj">&nbsp CNPJ</label>
-                    <input type="number" name="cnpj" placeholder="Descrição do Chamado">
+                    <input type="text" name="cnpj" id="cnpj" placeholder="CNPJ (14 Dígitos)" onblur="mascara()">
 
                     <label for="email">&nbsp Email</label>
-                    <input type="text" name="email" placeholder="Exemplo: Crachá">
+                    <input type="text" name="email" placeholder="empresa@dominio.com">
 
                     <label for="telefone">&nbsp Telefone</label>
-                    <input type="text" name="telefone" placeholder="Descrição do Chamado">
+                    <input type="text" name="telefone" id="telefone" onblur="mascaratel()" placeholder="DDD (2 Dígitos) + 9 Dígitos">
 
                     <!--Cria o botao para atualizar-->
 
-                    <button class="btn-login">ATUALIZAR</button>
+                    <button class="btn-login" style="margin-bottom: 14%;">ATUALIZAR</button>
 
                 </form>
 
@@ -47,5 +48,43 @@
         </div>
     </div>
     <script>
+        
+        function mascara() {    
+            var input = String(document.getElementById('cnpj').value)
+            console.log(input)
+            if (input.length == 14){
+                //console.log(aa.slice(0,3), aa.slice(3,6), aa.slice(6,9), aa.slice(9,11))
+                let p1 = input.slice(0,2)
+                let p2 = input.slice(2,5)
+                let p3 = input.slice(5,8)
+                let p4 = input.slice(8,12)
+                let p5 = input.slice(12,14)
+                let cpfpronto = p1.concat(".",p2,".",p3,"/",p4, "-",p5)
+                document.getElementById('cnpj').value = cpfpronto
+                console.log(cpfpronto)
+                
+        }
+    }
+    
     </script>
+
+<script>
+        
+    function mascaratel() {    
+        var input = String(document.getElementById('telefone').value)
+        console.log(input)
+        if (input.length == 11){
+            //console.log(aa.slice(0,3), aa.slice(3,6), aa.slice(6,9), aa.slice(9,11))
+            let p1 = input.slice(0,2)
+            let p2 = input.slice(2,7)
+            let p3 = input.slice(7,11)
+           
+            let telpronto = "(".concat(p1,")",p2,"-",p3)
+            document.getElementById('telefone').value = telpronto
+            console.log(telpronto)
+            
+    }
+}
+
+</script>
 </body>

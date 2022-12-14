@@ -12,26 +12,37 @@
     <script src="https://kit.fontawesome.com/f5b8112d40.js" crossorigin="anonymous"></script>
     <script src="../JS/chamadosMobile.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <link rel="stylesheet" href="/public/CSS/home.css">
 </head>
 
 <body>
-    <nav>
-        <!-- Icone que compacta as operações de navegação.  -->
-        <input type="checkbox" id="check">
-        <label for="check" class="checkBtn">
-            <img src="../IMG/barramenu.png" width="50px" height="50px">
-        </label>
-        <!-- Imagem contendo o logo da MRV.  -->
-        <a href="/public/HTML/paginaObras.html"><label class="logo"><img src="../IMG/logoMRV_nova.png" width="162px"
-                    height="70px" alt="Logo Mrv"></label></a>
-        <ul>
-            <!-- Listas de opções do menu.  -->
-            <li><a class="" href="../HTML/pagina.html">Dados da Empresa</a></li>
-            <li><a href="../HTML/empreiteiraContrato.html">Contratos</a></li>
-            <li><a href="../HTML/Chamados.html">Chamados</a></li>
-            <li><a href="../HTML/perfil.html">Perfil</a></li>
-        </ul>
-    </nav>
+  <nav class="navbar navbar-expand-lg bg-success sticky-top">
+    <div class="container">
+        <a class="navbar-brand" href="/public/HTML/paginaObras.html"">
+            <img src="/public/IMG/logoMRV_nova.png" width="150px" height="145px">
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="../HTML/pagina.html">Dados da Empresa</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="../HTML/empreiteiraContrato.html">Contratos</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="../HTML/Chamados.html">Chamados</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="../HTML/perfil.html">Perfil</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
     <!-- Tabela  -->
     <section class="grid">
         <div class="table">
@@ -49,11 +60,11 @@
                 <table class="table table-bordered">
                     <thead>
                         <tr class="table-active">
-                            <th scope="col">Número</th>
+                            <th scope="col">N°</th>
                             <th scope="col">Aberto</th>
                             <th scope="col">Título de chamado</th>
                             <th scope="col">Descriçao Resumida</th>
-                            <th scope="col">Mais informações</th>
+                            <th scope="col">EDITAR</th>
                         </tr>
                     </thead>
                     <tbody id="tabelona">
@@ -79,91 +90,25 @@
                     success: data => {
 
                         var tr = '';
-                        var modal = document.createElement('div');
                         //Função que navega por cada atribuição existente no banco de dados e manda para o HTML
                         data.forEach(element => {
                             contador += 1;
-                            tr += `<tr data-bs-toggle="modal" data-bs-target="exampleModal${contador}" id="tableRow">`;
+                            tr += `<tr>`;
                             tr += `<th scope="row"> ${contador} </th>`;
                             tr += `<th scope="row"> ${element.data} </th>`;
                             tr += `<td scope="row"> ${element.titulo} </td>`;
                             tr += `<td scope="row"> ${element.descricao} </td>`;
-                            tr += `<td scope="row"><button id="tableRow" data-bs-toggle="modal" data-bs-target="#exampleModal${contador}" onclick="abrirModal(${contador})">Clique</button></td>`;
+                            tr += `<td scope="row"><a href="/deleteChamado?cod_chamados=${element.cod_chamados}">DELETAR</a><br><a href="../HTML/atualizaChamado.html?${element.cod_chamados}">ATUALIZAR</a></td>`;
                             tr += `</tr>`;
-                            document.body.innerHTML += criarModal(contador, element.data, element.titulo, element.descricao);
+                           
                         });
                         $('#tabelona').html(tr);
                     }
                 });
             }
         }
-        
-        function abrirModal(id){
-            document.getElementById("exampleModal" + id).style.display = 'block';
-        }
-
-        function criarModal(contador, data, titulo, descricao) {      
-            return `<div class="modal fade" id="exampleModal${contador}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true"><div class="modal-dialog">
-                <div class="modal-content">
-                  <div class="modal-header">
-                    <h1 class="modal-title fs-5" id="exampleModalLabel">Dispositivo ${titulo}</h1>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                  </div>
-                  <div class="modal-body">
-          
-                  <!-- Tipo sec -->
-                  <div class="form-group mb-2">
-                    <label for="exampleInputEmail1" class="fs-4">Tipo</label>
-                    <div class="d-flex flex-row justify-content-between">
-                      <div class='col-12'>
-                        <input class="form-control border" id="tipo${contador}" disabled=true value="${titulo}"..."></input>
-                      </div>
-                    </div>
-                  </div>
-
-                  <!-- Endereco sec -->
-                  <div class="form-group mb-2">
-                    <label for="exampleInputEmail1" class="fs-4">Endereço</label>
-                    <div class="d-flex flex-row justify-content-between">
-                      <div class='col-12'>
-                        <input class="form-control border" id="endereco${contador}" disabled=true value="${data}"></input>
-                      </div>
-                    </div>
-                  </div>
-          
-                  <!-- Status sec -->
-                  <div class="form-group mb-2">
-                    <label for="exampleInputEmail1" class="fs-4">Status</label>
-                    <div class="d-flex flex-row justify-content-between">
-                      <div class='col-12'>
-                        <input class="form-control border" id="status${contador}" value="${descricao}" disabled=true></input>
-                      </div>
-                    </div>
-                  </div>
-          
-                  <div class='col-12 mt-2 d-flex justify-content-center align-items-center'>
-                  <button type="button" class="col-5 btn btn-warning d-flex flex-row justify-content-around align-items-center" onclick="toggleInputs(${contador});">
-                  <span id="btnText${contador}" class="fs-6">Habilitar edição </span>
-                  
-                  <svg xmlns="http://www.w3.org/2000/svg" width="16" fill="currentColor" class="bi bi-pencil ml-2" viewBox="0 0 16 16">
-                  <path d="M12.146.146a.5.5 0 0 1 .708 0l3 3a.5.5 0 0 1 0 .708l-10 10a.5.5 0 0 1-.168.11l-5 2a.5.5 0 0 1-.65-.65l2-5a.5.5 0 0 1 .11-.168l10-10zM11.207 2.5 13.5 4.793 14.793 3.5 12.5 1.207 11.207 2.5zm1.586 3L10.5 3.207 4 9.707V10h.5a.5.5 0 0 1 .5.5v.5h.5a.5.5 0 0 1 .5.5v.5h.293l6.5-6.5zm-9.761 5.175-.106.106-1.528 3.821 3.821-1.528.106-.106A.5.5 0 0 1 5 12.5V12h-.5a.5.5 0 0 1-.5-.5V11h-.5a.5.5 0 0 1-.468-.325z"/>
-                  </svg>
-                  </button>
-                </div>
-                  </div>
-          
-                  <div class="modal-footer">
-                  
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
-                    <button type="button" class="btn btn-warning mx-auto" onclick="updateDevice(${contador});" id="updateButton${contador}" data-bs-dismiss="modal" disabled='true'>Atualizar</button>
-                    <button type="button" class="btn btn-danger d-flex align-items-center justify-content-between" data-bs-dismiss="modal" onclick="deleteDevice(${contador})" id="deleteButton${contador}"> Deletar</button>
-                  </div>
-                </div>
-              </div>
-            </div>`;
-          }
-
     </script>
+    <script src="../JS/main.js"></script>
 </body>
 
 </html>

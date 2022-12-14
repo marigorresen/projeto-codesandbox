@@ -1,0 +1,250 @@
+/* FONTS */
+@font-face {
+    src:url(../Fontes/Fontes/Primária/Averta.woff);
+    font-family: fontepadrao;
+}
+
+/* VARIABLES */
+* {
+    padding: 0;
+    margin: 0;
+}
+
+a {
+    text-decoration: none;
+    color: #fff;
+    font-family: fontepadrao;
+}
+
+body {
+    font-family: montserrat;
+
+}
+
+/* VARIABLES */
+:root {
+    --cor-escura: #212529;
+    --cor-principal: #04844B;
+    --cor-navbar: #04844B;
+    --cor-letras-navbar: #FFFFFF;
+    --cor-principal-clara: rgb(7, 157, 86);
+    --cor-letras-hover: #ffa500;
+    --cor-principal-rgb: 0, 0, 0;
+    --c-body: #727272;
+    --font-base: "ClashDisplay", sans-serif;
+    --box-shadow: 0px 15px 25px rgba(0, 0, 0, 0.08);
+    --transicao: all 0.5s ease;
+}
+
+/* RESET & HELPERS */
+body {
+    font-family: var(--font-base);
+    line-height: 1.7;
+    color: var(--c-body);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.h1,
+.h2,
+.h3,
+.h4,
+.h5,
+.h6 {
+    font-weight: 600;
+    color: var(--cor-escura);
+}
+
+a {
+    text-decoration: none;
+    color: var(--cor-principal);
+    transition: var(--transicao);
+}
+
+a:hover {
+    color: var(--cor-principal-clara);
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+.section-padding {
+    padding-top: 140px;
+    padding-bottom: 140px;
+}
+
+.theme-shadow {
+    box-shadow: var(--box-shadow);
+}
+
+/* IMAGE ZOOM */
+.image-zoom {
+    position: relative;
+    /* overflow: hidden; */
+}
+
+.image-zoom-wrapper {
+    overflow: hidden;
+    position: relative;
+}
+
+.image-zoom-wrapper img {
+    transition: var(--transicao);
+}
+
+.image-zoom:hover .image-zoom-wrapper img {
+    transform: scale(1.1);
+}
+
+
+/* NAVBAR */
+.navbar {
+    box-shadow: var(--box-shadow);
+}
+
+.navbar-nav .nav-link {
+    font-weight: 500;
+    color: var(--cor-letras-navbar);
+}
+
+.navbar-nav .nav-link.active {
+    color: var(--cor-letras-hover);
+}
+
+
+/* BTN */
+.btn {
+    font-weight: 600;
+    font-size: 14px;
+    text-transform: uppercase;
+    border-radius: 0;
+    padding: 10px 24px;
+}
+
+.btn-brand {
+    background-color: var(--cor-principal);
+    border-color: var(--cor-principal);
+    color: rgb(255, 255, 255);
+}
+
+.btn-brand:hover {
+    background-color: var(--cor-principal-clara);
+    border-color: var(--cor-principal-clara);
+    color: #ffffff;
+}
+
+
+/* HOME */
+#home {
+    background: linear-gradient(rgba(var(--cor-principal-rgb), 0.507), rgba(var(--cor-principal-rgb), 0.438)), url(../IMG/fundo-cidade.jpg);
+    background-position: top;
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+}
+
+
+/* SECTION TITLE */
+.section-title {
+    margin-bottom: 60px;
+}
+
+.section-title .line {
+    width: 60px;
+    height: 4px;
+    background-color: var(--cor-principal);
+    margin: 16px auto 24px auto;
+}
+
+.section-title p {
+    max-width: 500px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+
+/* ICONBOX */
+.iconbox {
+    width: 70px;
+    height: 70px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(var(--cor-principal-rgb), 0.1);
+    color: var(--cor-principal);
+    font-size: 34px;
+    flex: none;
+}
+
+/* FOOTER */
+footer {
+    padding-top: 120px;
+}
+
+.footer-top {
+    padding-bottom: 40px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.footer-bottom {
+    padding-top: 40px;
+    padding-bottom: 40px;
+}
+
+
+footer li,
+footer p,
+footer a {
+    color: rgba(255, 255, 255, 0.7);
+}
+
+footer ul {
+    list-style: none;
+    padding: 0;
+}
+
+footer .line {
+    width: 40px;
+    height: 4px;
+    background-color: var(--cor-principal);
+    margin-top: 12px;
+    margin-bottom: 24px;
+}
+
+.social-icons a {
+    width: 40px;
+    height: 40px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 100px;
+}
+
+.social-icons a:hover {
+    background-color: var(--cor-principal);
+    color: white;
+}
+
+.btn-primary {
+    color: #fff;
+    background-color: #00204a;
+    border-color: #00204a; }
+    .btn-primary:hover {
+      color: #fff;
+      background-color: #001b3f;
+      border-color: #001a3b; }
+    .btn-check:focus + .btn-primary, .btn-primary:focus {
+      color: #fff;
+      background-color: #001b3f;
+      border-color: #001a3b;
+      -webkit-box-shadow: 0 0 0 0.25rem rgba(38, 65, 101, 0.5);
+      box-shadow: 0 0 0 0.25rem rgba(38, 65, 101, 0.5); }
+
+
+      

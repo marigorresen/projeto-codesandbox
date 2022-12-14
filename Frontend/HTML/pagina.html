@@ -41,7 +41,7 @@
 
             <div class="inputsdados">
 
-                <form id="paginaDados" name="formdadosempresa" action="/registrarDados" method="post" class="textfield">
+                <form id="paginaDados" name="formdadosempresa" action="/registrarDados" method="post" class="textfield" style="text-align:left;">
 
                     <label for="razaoSocial">Razão Social</label>
                     <input type="text" name="razaoSocial" class="estiloinputdados" id="sera" disabled>
@@ -77,7 +77,7 @@
                 let info = data;
                 info.map(function (info) {//map é um método que percorre o array
                 if(`${info.codDadosPrincipais}` == 1){
-                    saida += '<label for="razaoSocial">Razão Social</label><input type="text" name="razaoSocial" class="estiloinputdados" value="' + `${info.razaoSocial}` + '" disabled><br /><label for="nomeFantasia">Nome Fantasia</label><input type="text" name="nomeFantasia" class="estiloinputdados" value="' + `${info.nomeFantasia}` + '" disabled><br /><label for="cnpj">CNPJ</label><input type="number" name="cnpj" class="estiloinputdados" placeholder="10 Digitos" value="' + `${info.cnpj}` + '"   disabled><br /><label for="email">Email</label><input type="email" name="email" class="estiloinputdados" placeholder="10 Digitos" value="' + `${info.email}` + '"   disabled><br><label for="cnpj">CNPJ</label><input type="text" name="departamento" class="estiloinputdados"  value="' + `${info.departamento}` + '"   disabled><br>'
+                    saida += '<label for="razaoSocial" style="display: block">Razão Social</label><input type="text" name="razaoSocial" class="estiloinputdados" value="' + `${info.razaoSocial}` + '" disabled><br /><label for="nomeFantasia" style="display: block;">Nome Fantasia</label><input type="text" name="nomeFantasia" class="estiloinputdados" value="' + `${info.nomeFantasia}` + '" disabled><br /><label for="cnpj" style="display: block;">CNPJ</label><input type="number" name="cnpj" class="estiloinputdados" placeholder="10 Digitos" value="' + `${info.cnpj}` + '"   disabled><br /><label for="email" style="display: block;">Email</label><input type="email" name="email" class="estiloinputdados" placeholder="10 Digitos" value="' + `${info.email}` + '"   disabled><br><label for="departamento" style="display: block;">Serviços Oferecidos</label><input type="text" name="departamento" class="estiloinputdados"  value="' + `${info.departamento}` + '"   disabled><br>'
                 }
                     
                 });
@@ -86,6 +86,8 @@
 
 
     </script>
+
+
 </body>
 
 </html>

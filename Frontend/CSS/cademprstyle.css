@@ -30,7 +30,7 @@ body{
   
   .card-login{
     /* Centraliza a DIV e seta a height e widht baseado na viewport do dispositivo*/
-    width: 60%;
+    width: 80%;
     display: flex;
     justify-content: center;
     align-items: center;

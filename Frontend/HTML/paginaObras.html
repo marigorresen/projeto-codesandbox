@@ -1,85 +1,169 @@
-<!DOCTYPE html>
-<html lang="pt-br">
+<!doctype html>
+<html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Empreiteiro Portal</title>
-    <link rel="stylesheet" href="/public/CSS/style.css">
-    <link rel="stylesheet" href="/public/CSS/normalize.css">
-    <!--[if lt IE 9]>
-            <script src="../js/html5shiv.js"></script>
-        <![endif]-->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Homero</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@4.0/dist/fancybox.css">
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <link rel="stylesheet" href="../CSS/home_empreiteiro.css">
+    <link rel="shortcut icon" href="images\favicon.png" />
 </head>
 
-<body>
-    <!--INÍCIO TOPO-->
-    <header>
-        <a href="/public/HTML/paginaObras.html"><img src="/public/IMG/logoMRV_obra.png" id="logo"></a>
-        <nav>
-            <ul>
-                <li><a href="/public/HTML/perfil.html">PERFIL</a></li>
-                <li><a href="/public/HTML/Chamados.html">CHAMADOS</a></li>
-                <li><a href="/public/HTML/empreiteiraContrato.html">CONTRATOS</a></li>
-                <li><a href="/public/HTML/pagina.html">DADOS DA EMPRESA</a></li>
-            </ul>
-        </nav>
-    </header>
+<body data-bs-spy="scroll" data-bs-target=".navbar">
 
-    <!--INÍCIO BARRA DE PESQUISA-->
-    <div id="barra-de-pesquisa">
-        <div id="semi-header">
-            <span id="frasezinha">Encontre o seu trabalho dos sonhos</span>
-            <div id="form">
-                <form>
-                    <select name="palavra-chave" id="keyword">
-                        <option selected disabled>Palavra-Chave</option>
-                        <option>Prédio</option>
-                        <option>Casa</option>
-                    </select> |
-                    <select name="prioridade" id="priority">
-                        <option selected disabled>Tipo de Prioridade</option>
-                        <option>Tipo 1</option>
-                        <option>Tipo 2</option>
-                        <option>Tipo 3</option>
-                    </select> |
-                    <select name="localização" id="place">
-                        <option selected disabled>Localização</option>
-                        <option>São Paulo</option>
-                        <option>Minas Gerais</option>
-                    </select> |
-                    <select name="setor" id="sector">
-                        <option selected disabled>Serviço</option>
-                        <option>Pintura</option>
-                        <option>Concreto</option>
-                        <option>Marcenaria</option>
-                    </select>
-                    <button type="submit" class="submit">Pesquisar</button>
-                </form>
+    <!-- HEADER -->
+    <nav class="navbar navbar-expand-lg bg-success sticky-top">
+        <div class="container">
+            <a class="navbar-brand" href="#">
+                <img src="..\IMG\logoMRV_nova.png" width="150px" height="145px">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="../HTML/pagina.html">DADOS DA EMPRESA</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="../HTML/empreiteiraContrato.html">CONTRATOS</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="../HTML/Chamados.html">CHAMADOS</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="../HTML/perfil.html">PERFIL</a>
+                    </li>
+                </ul>
             </div>
         </div>
-    </div>
-    <!--Fim barra de pesquisa-->
+    </nav>
 
-    <!--INÍCIO CONTEÚDO-->
-    <div id="conteudo">
-
-        <!--INÍCIO PRINCIPAL-->
-        <div id="principal">
-            <div id="pesquisa">
-                <h3>Serviços</h3>
-                <div class="linha-grande"></div>
-            </div>
-            <div id="obras">
+    <!-- IMAGEM INICIAL -->
+    <section id="home" class="min-vh-100 d-flex align-items-center text-center">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <h2 data-aos="fade-left" class="text-uppercase text-white fw-semibold display-3">Bem-vindo empreiteiro
+                    </h2>
+                    <h3 class="text-white mt-3 mb-4" data-aos="fade-right">Encontre o seu trabalho dos sonhos:</h3>
+                </div>
             </div>
         </div>
-        <!--Fim principal-->
-    </div>
-    <!--Fim do conteudo-->
+    </section>
+
+
+    <!--Separador para a área de serviços-->
+    <div class="container">
+        <div class="row justify-content-center align-items-top">
+          <div class="col-lg-9 text-center mt-5">
+            <h3 class="heading">Serviços:</h3>
+          </div>
+        </div>
+      </div>
+
+        <!-- OBRAS-->
+        <section class="py-0">
+            <div id="obrasRead" class="container px-4 px-lg-5 mt-5">
+                <div class="row gx-5 gx-lg-6 row-cols-3 row-cols-md-4 row-cols-xl-4 justify-content-center">
+                    <div class="col mb-5">
+                        <div class="card h-100">
+                            <!-- Imagem da obra e configuração da imagem-->
+                            <img class="card-img-top" src="..\IMG\predio3.png" alt="..." />
+                            <!-- Detalhes da obra e configurações de texto-->
+                            <div class="card-body p-4">
+                                <div class="text-center">
+                                    <!-- Nome da obra -->
+                                    <h5 class="fw-bolder">Obra</h5>
+                                    <!-- Setor alvo para a realização da obra-->
+                                    Pintura <br>
+                                    <!-- Unidade de medida da área que será usada-->
+                                    12m2
+                                </div>
+                            </div>
+                            <!-- Saiba mais e configurações estéticas do botão-->
+                            <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
+                                <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="#">Saiba mais</a></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+    <!-- FOOTER -->
+    <footer class="bg-dark">
+        <div class="footer-top">
+            <div class="container">
+                <div class="row gy-5">
+                    <div class="col-lg-3 col-sm-6">
+                        <a href="#"><img src="..\IMG\logoMRV_nova.png" width="110px" height="115px"></a>
+                        <div class="line"></div>
+                        <p>Construímos o presente com foco em um futuro melhor.</p>
+                        <div class="social-icons">
+                            <a href="https://twitter.com/mrvoficial"><i class="ri-twitter-fill"></i></a>
+                            <a href="https://www.instagram.com/mrv/"><i class="ri-instagram-fill"></i></a>
+                            <a href="https://www.mrv.com.br/"><i class="ri-home-fill"></i></a>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-sm-6">
+                        <h5 class="mb-0 text-white">SERVICES</h5>
+                        <div class="line"></div>
+                        <ul>
+                            <li><a href="#">UI Design</a></li>
+                            <li><a href="#">UX Design</a></li>
+                            <li><a href="#">Branding</a></li>
+                            <li><a href="#">Logo Designing</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-lg-3 col-sm-6">
+                        <h5 class="mb-0 text-white">SOBRE</h5>
+                        <div class="line"></div>
+                        <ul>
+                            <li><a href="#">Blog</a></li>
+                            <li><a href="#">Services</a></li>
+                            <li><a href="#">Company</a></li>
+                            <li><a href="#">Career</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-lg-3 col-sm-6">
+                        <h5 class="mb-0 text-white">CONTACT</h5>
+                        <div class="line"></div>
+                        <ul>
+                            <li>São Paulo, SP</li>
+                            <li>(11) 4004-9000</li>
+                            <li>www.mrv.com.br</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <div class="container">
+                <div class="row g-4 justify-content-between">
+                    <div class="col-auto">
+                        <p class="mb-0">© Copyright Horizon. Todos os direitos reservados.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@4.0/dist/fancybox.umd.js"></script>
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script src="../JS/main.js"></script>
     <script>
         const urlObras = "/readidObras";
-        const divObras = document.getElementById("obras");
+        const divObras = document.getElementById("obrasRead");
 
         fetch(urlObras)//faz a requisição
             .then((response) => {
@@ -89,11 +173,14 @@
                 let saida = '';
                 let obras = data;
                 obras.map(function (obras) {//map é um método que percorre o array
-                    saida += '<article><section class="imagem"><img src="/public/IMG/predio1.jfif"></section><section class="informacoes"><h5>' + `${obras.nome_obra}` + '</h5><p>' + `${obras.descricao}` + '</p></section><br><section id="rodape-artigo">' + `${obras.localizacao}` + ' | ' + `${obras.tamanho}` + ' m<sup>2</sup></section></article>'
-                });
+                    saida += '<div class="row gx-5 gx-lg-6 row-cols-3 row-cols-md-4 row-cols-xl-4 justify-content-center"><div class="col mb-5"><div class="card h-100"><img class="card-img-top" src="/public/IMG/predio3.png" alt="..." /><div class="card-body p-4"><div class="text-center"><h5 class="fw-bolder">' + `${obras.nome_obra}` + '</h5>' + `${obras.setor_requisitado}` + ' <br>' + `${obras.tamanho}` + 'm²</div></div><div class="card-footer p-4 pt-0 border-top-0 bg-transparent"><div class="text-center"><a class="btn btn-outline-dark mt-auto" href="../HTML/detalhesObras.html?' + `${obras.cod_cadastro_obra}` + '">Saiba mais</a></div></div></div></div></div>'
+                    console.log(obras.nome_obra);
+                    console.log(obras.cod_cadastro_obra);
+                    });
+                    
                 divObras.innerHTML = saida;
             })
-
+    
     </script>
 </body>
 

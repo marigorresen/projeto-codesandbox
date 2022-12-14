@@ -167,11 +167,15 @@ h3 {
 .estiloinputdados {
     border: 1px solid rgba(103, 103, 103, 0.7);
     border-radius: 5px;
-    margin-bottom: 8%;
+    margin-bottom: 6%;
     margin-top: 2%;
-    padding: 5px;
+    padding: 8px;
+    display: block;
+    
     /*Diminuir porcentagem da margem em telas grandes*/
 }
+
+
 
 
 .subtitulosocios {
@@ -222,9 +226,7 @@ h3 {
 
 /*Atributos modificados para telas de até 590px*/
 @media screen and (max-width: 590px) {
-    body {
-        background-color: #a6c743;
-    }
+    
 
     a:hover,
     a.active {
