@@ -1,52 +1,60 @@
-<!DOCTYPE html>
-<html lang="en">
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Homero</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!--Importa o arquivo CSS-->
-    <link rel="stylesheet" href="../CSS/stylelogin.css">
-    <title>Login</title>
-</head>
+		<!-- CSS UTILIZADO -->
+		<link rel="stylesheet" href="../CSS/loginCadastro.css">
+	</head>
 
-<body>
-    <nav>
-        <label class="logo"><img src="../IMG/logoMRV_nova.png" width="150px" height="80px" alt="Logo Mrv"></label>
-    </nav>
-    <div class="main-login">
-        <div class="right-login">
-            <div class="card-login">
-                <!--Cria o titulo principal da pagina-->
-                <h1>Login</h1>
-                <!--Cria as classes responsaveis pelo input/labels do usuario e senha-->
-                
-                    <div class="textfield">
-                        <label for="usuario">&nbsp CNPJ</label>
-                        <input type="text" name="usuario" placeholder="Digite seu CNPJ">
-                    </div>
-                    <div class="textfield">
-                        <label for="senha">&nbsp Senha</label>
-                        <input type="password" name="senha" placeholder="Digite sua senha">
-                    </div>
-
-                    <!--cria o botao de login-->
-                    <button class="btn-login"><a href="../HTML/paginaObras.html">ENTRAR</a></button>
-                
-                <div class="opcoes">
-                    <!--cria a opção de checkbox para manter-se logado e de recuperar a senha-->
-                    <input type="checkbox" /> <span> Mantenha-me contectado </span>
-                    <span class="cadastro"> <a href="../HTML/cadastro-empreiteiro.html"
-                            rel="noopener noreferrer">Criar conta</a></span>
+	<body>
+		<!--AGRUPAMENTO DAS CAIXAS DE TEXTO E DEFINIÇÃO DO PLANO DE FUNDO E FOTO LATERAL-->
+		<div class="grupo" style="background-image: url('../IMG/prediosBg.png');">
+			<div class="inner">
+				<div class="image-holder ">
+					<img src="../IMG/fotoLogin.png" alt="">
+				</div>
+				<form action="/principal">
+                    <BR></BR>
                     <br>
-                    <span class="esqueci"> <a href="../HTML/esquecisenha.html"
-                            rel="noopener noreferrer">Esqueceu a Senha?</a></span>
-                    <br>
-                </div>
-            </div>
-        </div>
-
-    </div>
-</body>
-
+					<h3>Bem-vindo de volta</h3>
+                    <BR>
+					<br>
+					<div class="caixaGrupo">
+					</div>
+					<div class="caixa">
+						<input type="text" placeholder="CNPJ" class="form-control" id="cnpj" onblur="mascara()">
+					</div>
+                    <BR></BR>
+					<div class="caixa">
+						<input type="password" placeholder="Senha" class="form-control">
+					</div>
+					<div>
+						<a href="../HTML/cadastro-empreiteiro.html"><h4>Primeira vez aqui? Faça seu cadastro</h4></a>
+					</div>
+					<button class="botao">Entrar</button>
+				</form>
+			</div>
+		</div>
+		
+		<script>
+		function mascara() {    
+            var input = String(document.getElementById('cnpj').value)
+            console.log(input)
+            if (input.length == 14){
+                //console.log(aa.slice(0,3), aa.slice(3,6), aa.slice(6,9), aa.slice(9,11))
+                let p1 = input.slice(0,2)
+                let p2 = input.slice(2,5)
+                let p3 = input.slice(5,8)
+                let p4 = input.slice(8,12)
+                let p5 = input.slice(12,14)
+                let cpfpronto = p1.concat(".",p2,".",p3,"/",p4, "-",p5)
+                document.getElementById('cnpj').value = cpfpronto
+                console.log(cpfpronto)
+                
+        }
+    }
+	</script>
+	</body>
 </html>

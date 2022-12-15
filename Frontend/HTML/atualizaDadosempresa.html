@@ -22,27 +22,29 @@
                 <h1 style="margin-top: 11%;">Atualize os dados da empresa</h1>
                 <br>
                 <!--Cria a classe para inserir o CNPJ ou CPF e dados para cadastro-->
-                <form name="formdados" method="post" action="/atualizaDados?codDadosPrincipais=1" class="textfield">
-                    <label for="razaoSocial">&nbsp Razão Social</label>
-                    <input type="text" name="razaoSocial" placeholder="Exemplo: Crachá">
+                <div id="formUP">
+                    <form name="formdados" method="post" action="/atualizaDados?codDadosPrincipais=1" class="textfield">
+                        <label for="razaoSocial">&nbsp Razão Social</label>
+                        <input type="text" name="razaoSocial" placeholder="Exemplo: Crachá">
 
-                    <label for="nomeFantasia">&nbsp Nome Fantasia</label>
-                    <input type="text" name="nomeFantasia" placeholder="Nome Fantasia da Empresa">
+                        <label for="nomeFantasia">&nbsp Nome Fantasia</label>
+                        <input type="text" name="nomeFantasia" placeholder="Nome Fantasia da Empresa">
 
-                    <label for="cnpj">&nbsp CNPJ</label>
-                    <input type="text" name="cnpj" id="cnpj" placeholder="CNPJ (14 Dígitos)" onblur="mascara()">
+                        <label for="cnpj">&nbsp CNPJ</label>
+                        <input type="text" name="cnpj" id="cnpj" placeholder="CNPJ (14 Dígitos)" onblur="mascara()">
 
-                    <label for="email">&nbsp Email</label>
-                    <input type="text" name="email" placeholder="empresa@dominio.com">
+                        <label for="email">&nbsp Email</label>
+                        <input type="text" name="email" placeholder="empresa@dominio.com">
 
-                    <label for="telefone">&nbsp Telefone</label>
-                    <input type="text" name="telefone" id="telefone" onblur="mascaratel()" placeholder="DDD (2 Dígitos) + 9 Dígitos">
+                        <label for="telefone">&nbsp Telefone</label>
+                        <input type="text" name="telefone" id="telefone" onblur="mascaratel()" placeholder="DDD (2 Dígitos) + 9 Dígitos">
 
-                    <!--Cria o botao para atualizar-->
+                        <!--Cria o botao para atualizar-->
 
-                    <button class="btn-login" style="margin-bottom: 14%;">ATUALIZAR</button>
+                        <button class="btn-login" style="margin-bottom: 14%;">ATUALIZAR</button>
 
-                </form>
+                    </form>
+                </div>
 
             </div>
         </div>
@@ -87,4 +89,34 @@
 }
 
 </script>
+
+    <script>
+            let form = document.getElementById("formulario");
+            let idDados = +window.location.search.replace('?', '');
+
+            form.action = '/atualizaDados?codDadosPrincipais=' + idDados;
+    </script>
+    <script>
+        const urlDados = "/readDados";
+        const divDados = document.getElementById("formUP");
+
+        fetch(urlDados)//faz a requisição
+            .then((response) => {
+                return response.json();
+            })
+            .then((data) => {
+                let saida = '';
+                let dados = data;
+                dados.map(function (dados) {//map é um método que percorre o array
+                    if(dados.codDadosPrincipais == 1){
+                        saida += '<form id="formulario" name="form2" method="post" action="/atualizaDados?codDadosPrincipais=1'+ '" class="textfield"><label for="razaoSocial">&nbsp Razão Social</label><input type="text" name="razaoSocial" value="' + `${dados.razaoSocial}` + '"><label for="nomeFantasia">&nbsp Nome Fantasia</label><input type="text" name="nomeFantasia" value="' + `${dados.nomeFantasia}` + '"><label for="cnpj">&nbsp CNPJ</label><input type="text" name="cnpj" value="' + `${dados.cnpj}` + '" id="cnpj" onblur="mascara()"><label for="servicos">&nbsp Serviços</label><input type="text" name="departamento" value="' + `${dados.departamento}` + '"><label for="email">&nbsp Email</label><input type="text" name="email" value="' + `${dados.email}` + '"><button class="btn-login">AVANÇAR</button></form>'
+
+                    }
+                });
+                    
+                divDados.innerHTML = saida;
+            })
+    </script>
+
+
 </body>

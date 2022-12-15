@@ -27,7 +27,7 @@ body {
     --cor-principal: #04844B;
     --cor-navbar: #04844B;
     --cor-letras-navbar: #FFFFFF;
-    --cor-principal-clara: rgb(7, 157, 86);
+    --cor-principal-clara: #079d56;
     --cor-letras-hover: #ffa500;
     --cor-principal-rgb: 0, 0, 0;
     --c-body: #727272;
@@ -143,9 +143,8 @@ img {
 /* HOME */
 #home {
     background: linear-gradient(rgba(var(--cor-principal-rgb), 0.507), rgba(var(--cor-principal-rgb), 0.438)), url(../IMG/fundo-cidade.jpg);
-    background-position: top;
-    background-size: 100% 100%;
-    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
 }
 
 
@@ -233,12 +232,12 @@ footer .line {
 
 .btn-primary {
     color: #fff;
-    background-color: #00204a;
-    border-color: #00204a; }
+    background-color: #04844B;
+    border-color: #04844B; }
     .btn-primary:hover {
       color: #fff;
       background-color: #001b3f;
-      border-color: #001a3b; }
+      border-color: #001b3f; }
     .btn-check:focus + .btn-primary, .btn-primary:focus {
       color: #fff;
       background-color: #001b3f;
@@ -246,5 +245,9 @@ footer .line {
       -webkit-box-shadow: 0 0 0 0.25rem rgba(38, 65, 101, 0.5);
       box-shadow: 0 0 0 0.25rem rgba(38, 65, 101, 0.5); }
 
+
+
+
+      
 
       

@@ -8,7 +8,7 @@ const DBSOURCE = "MRV.db"
 
 
 const hostname = '127.0.0.1';// endereço
-const port = 1301;// porta do site
+const port = 1316;// porta do site
 const app = express();// app faz o manuseio do express
 
 app.use("/public", express.static(path.join(__dirname, "../Frontend"), {
@@ -34,6 +34,12 @@ app.get('/', function (req, res) {
 	// On getting the home route request,
 	// the user will be redirected to GFG website
 	res.redirect('/public');
+});
+
+app.get('/principal', function (req, res) {
+	// On getting the home route request,
+	// the user will be redirected to GFG website
+	res.redirect('/public/HTML/paginaObras.html');
 });
 
 app.get('/voltaChamados', function (req, res) {
@@ -370,7 +376,7 @@ app.post('/registrarDados', urlencodedParser, (req, res) => {
 			throw err;
 		}
 	});
-	res.redirect('/public/HTML/login.html');
+	res.redirect('/principal');
 	db.close(); // Fecha o banco
 	res.end();
 });

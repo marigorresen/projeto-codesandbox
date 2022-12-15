@@ -28,16 +28,16 @@
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto" >
                     <li class="nav-item">
-                        <a class="nav-link">DADOS DA EMPRESA</a>
+                        <a class="nav-link" href="../HTML/pagina.html">DADOS DA EMPRESA</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link">CONTRATOS</a>
+                        <a class="nav-link" href="../HTML/empreiteiraContrato.html">CONTRATOS</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link">CHAMADOS</a>
+                        <a class="nav-link" href="../HTML/Chamados.html">CHAMADOS</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link">PERFIL</a>
+                        <a class="nav-link" href="../HTML/perfil.html">PERFIL</a>
                     </li>
                 </ul>
             </div>
@@ -66,13 +66,74 @@
             </div>
         </section>
 
-
+    <!-- FOOTER -->
+    <footer class="bg-dark">
+        <div class="footer-top">
+            <div class="container">
+                <div class="row gy-5">
+                    <div class="col-lg-3 col-sm-6">
+                        <a href="#"><img src="..\IMG\logoMRV_nova.png" width="110px" height="115px"></a>
+                        <div class="line"></div>
+                        <p>Construímos o presente com foco em um futuro melhor.</p>
+                        <div class="social-icons">
+                            <a href="https://twitter.com/mrvoficial"><i class="ri-twitter-fill"></i></a>
+                            <a href="https://www.instagram.com/mrv/"><i class="ri-instagram-fill"></i></a>
+                            <a href="https://www.mrv.com.br/"><i class="ri-home-fill"></i></a>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-sm-6">
+                        <h5 class="mb-0 text-white">INOVAÇÃO</h5>
+                        <div class="line"></div>
+                        <ul>
+                            <li><a href="#">Desafios</a></li>
+                            <li><a href="#">Parcerias</a></li>
+                            <li><a href="#">Reconhecimento</a></li>
+                            <li><a href="#">Notícias</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-lg-3 col-sm-6">
+                        <h5 class="mb-0 text-white">SOBRE</h5>
+                        <div class="line"></div>
+                        <ul>
+                            <li><a href="#">Site Institucional</a></li>
+                            <li><a href="#">Por que a MRV?</a></li>
+                            <li><a href="#">MRV em números</a></li>
+                            <li><a href="#">Sonhar e Morar</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-lg-3 col-sm-6">
+                        <h5 class="mb-0 text-white">CONTATO</h5>
+                        <div class="line"></div>
+                        <ul>
+                            <li>São Paulo, SP</li>
+                            <li>(11) 4004-9000</li>
+                            <li>www.mrv.com.br</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <div class="container">
+                <div class="row g-4 justify-content-between">
+                    <div class="col-auto">
+                        <p class="mb-0">© Copyright Horizon. Todos os direitos reservados.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
 
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@4.0/dist/fancybox.umd.js"></script>
     <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
     <script src="../JS/main.js"></script>
+    <script>
+        function alerta(){
+            alert("Parabéns! Você foi candidatado com sucesso!");
+        }
+    </script>
     <script>
         const urlObras = "/readidObras";
         const divObras = document.getElementById("obrasRead");
@@ -86,7 +147,7 @@
                 let obras = data;
                 obras.map(function (obras) {//map é um método que percorre o array
                     if(obras.cod_cadastro_obra == idObra){
-                        saida += '<div class="row gx-4 gx-lg-5 align-items-center"><div class="col-md-6"><img class="card-img-top mb-5 mb-md-0 border border-success border border-4" src="/public/IMG/predio3.png" alt="..." /></div><div class="col-md-6"><div class="small mb-1">' + `${obras.setor_requisitado}` + '</div><h1 class="display-5 fw-bolder">' + `${obras.nome_obra}` + '</h1><span>' + `${obras.tamanho}` + 'm²</span><p class="lead">' + `${obras.descricao}` + '</p><div class="d-flex"><button class="btn btn-outline-success flex-shrink-0" type="button">    Candidate-se    </button></div></div></div>'
+                        saida += '<div class="row gx-4 gx-lg-5 align-items-center"><div class="col-md-6"><img class="card-img-top mb-5 mb-md-0 border border-success border border-4" src="/public/IMG/predio3.png" alt="..." /></div><div class="col-md-6"><div class="small mb-1">' + `${obras.setor_requisitado}` + '</div><h1 class="display-5 fw-bolder">' + `${obras.nome_obra}` + '</h1><span>' + `${obras.tamanho}` + 'm²</span><p class="lead">' + `${obras.descricao}` + '</p><div class="d-flex"><button class="btn btn-outline-success flex-shrink-0" type="button" onclick="alerta()">    Candidate-se    </button></div></div></div>'
                         console.log(obras.nome_obra);
                         console.log(obras.cod_cadastro_obra);
                     }

@@ -1,46 +1,40 @@
-<!DOCTYPE html>
-<html lang="en">
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Homero</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!--Importa o arquivo CSS-->
-    <link rel="stylesheet" href="../CSS/stylelogin.css">
-    <title>Login</title>
-</head>
+		<!-- CSS UTILIZADO -->
+		<link rel="stylesheet" href="../CSS/loginCadastro.css">
+	</head>
 
-<body>
-    <nav>
-        <label class="logo"><img src="../IMG/logoMRV_nova.png" width="150px" height="80px" alt="Logo Mrv"></label>
-    </nav>
-    <div class="main-login">
-        <div class="right-login">
-            <div class="card-login">
-                <!--Cria o titulo principal da pagina-->
-                <h1>Login</h1>
-                <!--Cria as classes responsaveis pelo input/labels do usuario e senha-->
-                <div class="textfield">
-                    <label for="usuario">&nbsp Usuário</label>
-                    <input type="text" name="usuario" placeholder="Usuário">
-                </div>
-                <div class="textfield">
-                    <label for="senha">&nbsp Senha</label>
-                    <input type="password" name="senha" placeholder="Digite sua senha">
-                </div>
-
-                <!--cria o botao de login-->
-                <button class="btn-login"><a href="/public/HTML/historicoObras.html">ENTRAR</a></button>
-                <div class="opcoes">
-                    <!--cria a opção de checkbox para manter-se logado e de recuperar a senha-->
-                    <input type="checkbox" /> <span> Mantenha-me contectado </span>
-                    <span class="esqueci"> <a href="/public/HTML/esquecisenha.html" target="_self "
-                            rel="noopener noreferrer">Esqueceu a Senha?</a></span>
-                </div>
-            </div>
-        </div>
-
-    </div>
-</body>
-
+	<body>
+		<!--AGRUPAMENTO DAS CAIXAS DE TEXTO E DEFINIÇÃO DO PLANO DE FUNDO E FOTO LATERAL-->
+		<div class="grupo" style="background-image: url('../IMG/prediosBg.png');">
+			<div class="inner">
+				<div class="image-holder ">
+					<img src="../IMG/fotoLogin.png" alt="">
+				</div>
+				<form action="/voltaObras">
+                    <BR></BR>
+                    <br>
+					<h3>Bem-vindo ADMINISTRADOR</h3>
+                    <BR>
+					<br>
+					<div class="caixaGrupo">
+					</div>
+					<div class="caixa">
+						<input type="text" placeholder="CNPJ" class="form-control">
+					</div>
+                    <BR></BR>
+					<div class="caixa">
+						<input type="password" placeholder="Senha" class="form-control">
+					</div>
+					
+					<button class="botao">Entrar</button>
+				</form>
+			</div>
+		</div>
+		
+	</body>
 </html>
