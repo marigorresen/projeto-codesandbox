@@ -8,41 +8,48 @@
     <title>Chamados</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
-    <link rel="stylesheet" href="../CSS/Chamados.css">
+    <link rel="stylesheet" href="../CSS/testeChamados.css">
     <script src="https://kit.fontawesome.com/f5b8112d40.js" crossorigin="anonymous"></script>
     <script src="../JS/chamadosMobile.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-    <link rel="stylesheet" href="/public/CSS/home.css">
+    <link rel="stylesheet" href="../CSS/home.css">
 </head>
 
-<body>
-  <nav class="navbar navbar-expand-lg bg-success sticky-top">
-    <div class="container">
-        <a class="navbar-brand" href="/public/HTML/paginaObras.html">
-            <img src="/public/IMG/logoMRV_nova.png" width="150px" height="145px">
-        </a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav ms-auto">
-                <li class="nav-item">
-                    <a class="nav-link" href="../HTML/pagina.html">Dados da Empresa</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="../HTML/empreiteiraContrato.html">Contratos</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="../HTML/Chamados.html">Chamados</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="../HTML/perfil.html">Perfil</a>
-                </li>
-            </ul>
+<body data-bs-spy="scroll" data-bs-target=".navbar">
+
+    <!-- HEADER -->
+    <nav class="navbar navbar-expand-lg bg-success sticky-top">
+        <div class="container">
+            <a class="navbar-brand" href="/public/HTML/paginaObras.html">
+                <img src="..\IMG\logoMRV_nova.png" width="150px" height="145px">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="../HTML/pagina.html">DADOS DA EMPRESA</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="../HTML/empreiteiraContrato.html">CONTRATOS</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="../HTML/Chamados.html">CHAMADOS</a>
+                    </li>
+                    <!-- <li class="nav-item">
+                        <a class="nav-link" href="../HTML/perfil.html">PERFIL</a>
+                    </li> -->
+                </ul>
+            </div>
         </div>
-    </div>
-</nav>
+    </nav>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@4.0/dist/fancybox.umd.js"></script>
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script src="/public/JS/main.js"></script>
+    
     <!-- Tabela  -->
     <section class="grid">
         <div class="table">
@@ -108,7 +115,6 @@
             }
         }
     </script>
-    <script src="../JS/main.js"></script>
 </body>
 
 </html>

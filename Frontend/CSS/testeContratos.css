@@ -1,0 +1,164 @@
+/*Definição da fonte padrão utilizada no site, através de uma fonte baixada*/
+@font-face {
+    font-family: fontepadrao;
+    src: url(../Fontes/Fontes/Primária/Averta.woff)
+}
+
+.grid {
+    margin: 10%;
+    padding: 32px;
+    box-shadow: 5px 4px 5px black;
+    border: 1px solid black;
+    border-radius: 10px;
+    font-family: fontepadrao;
+}
+
+.texto .link {
+    background-color: #04844b;
+    color: white;
+    justify-content: flex-end;
+    height: 7vh;
+}
+
+
+
+.titulo {
+    color: #04844b;
+    margin: 10px;
+}
+
+.texto {
+    display: flex;
+    justify-content: space-between;
+}
+
+
+/*Seletor universal de todos os elementos do HTML*/
+* {
+    padding: 0;
+    margin: 0;
+    text-decoration: none;
+    list-style: none;
+    box-sizing: border-box;
+    font-family: fontepadrao;
+}
+/*Definição dos atributos no corpo da página*/
+body {
+    font-family: montserrat;
+}
+
+
+
+/*Atributos modificados, especificos para telas de até 952px*/
+@media screen and (max-width: 952px) {
+
+    .link {
+        height: 6.5vh;
+        font-size: 10px;
+        background-color: #04844b;
+        color: white;
+    }
+
+}
+
+/*Atributos modificados, especificos para telas de até 858px*/
+@media screen and (max-width: 858px) {
+
+    .link {
+        height: 6 .5vh;
+        font-size: 10px;
+        background-color: #04844b;
+        color: white;
+    }
+
+
+}
+
+/*Atributos modificados, especificos para telas de até 600px*/
+@media screen and (max-width: 600px) {
+    
+    .grid{
+        justify-items: auto;
+        
+
+    }
+
+    .table-active {
+        font-size: 12px;
+    }
+
+
+    section .grid {
+        height: 20vh;
+        width: 20vw;
+    }
+
+    .texto {
+            font-size: 10px;   
+            
+    }
+
+    .texto .titulo {
+        font-size: 17px;    
+    }
+
+    .link {
+        height: 8.5vh;
+        font-size: 10px;
+        background-color: #04844b;
+        color: white;
+    }
+
+   
+    .texto .file {
+        display: none;
+    }
+}
+
+/*Atributos modificados, especificos para telas de até 400px*/
+@media screen and (max-width: 400px) {
+
+    .tabela-active {
+        font-size: 12px;
+    }
+
+
+    section .grid {
+        height: 20vh;
+        width: 20vw;
+    }
+
+    .texto {
+            font-size: 10px;   
+            
+    }
+
+    .texto .titulo {
+        font-size: 13px;    
+    }
+
+    .link {
+        height: 6.5vh;
+        font-size: 10px;
+        background-color: #04844b;
+        color: white;
+    }
+
+
+    .texto .file {
+        display: none;
+    }
+
+    .toggle-button {
+        display: flex;
+    }
+
+    .informacoes {
+        display: none;
+        width: 100%;
+    }
+
+    .informacoes.active {
+        display: flex;
+    }
+}

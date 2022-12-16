@@ -18,7 +18,7 @@
     <!-- HEADER -->
     <nav class="navbar navbar-expand-lg bg-success sticky-top">
         <div class="container">
-            <a class="navbar-brand" href="#">
+            <a class="navbar-brand" href="/public/">
                 <img src="..\IMG\logoMRV_nova.png" width="150px" height="145px">
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
@@ -35,9 +35,6 @@
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="../HTML/Chamados.html">CHAMADOS</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="../HTML/perfil.html">PERFIL</a>
                     </li>
                 </ul>
             </div>
@@ -229,36 +226,7 @@
     
     </script>
 
-<script>
-    let index = 0;
 
-    function carrossel(){
-        index++
-        if (index > 2){
-            index=0
-        }
-
-        switch(index){
-            case 0:
-                document.getElementById("home").style= "background: linear-gradient(rgba(var(--cor-principal-rgb), 0.507), rgba(var(--cor-principal-rgb), 0.438)), url(../IMG/fundocidade2.jpg);";
-                console.log(index);
-                break;
-            case 1:
-                document.getElementById("home").style= "background: linear-gradient(rgba(var(--cor-principal-rgb), 0.507), rgba(var(--cor-principal-rgb), 0.438)), url(../IMG/fundo-cidade.jpg);";
-                console.log(index);
-                break;
-
-            case 2:
-                document.getElementById("home").style= "background: linear-gradient(rgba(var(--cor-principal-rgb), 0.507), rgba(var(--cor-principal-rgb), 0.438)), url(../IMG/fundo3mrv.jpg);";
-                console.log(index);
-                break;
-
-        }
-
-
-    }
-    setInterval(carrossel,2200)
-</script>
 
 
 </body>

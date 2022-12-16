@@ -5,38 +5,27 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Obras</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@4.0/dist/fancybox.css">
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
-    <link rel="stylesheet" href="../CSS/Chamados.css">
+    <link rel="stylesheet" href="../CSS/testeChamados.css">
     <script src="https://kit.fontawesome.com/f5b8112d40.js" crossorigin="anonymous"></script>
     <script src="../JS/chamadosMobile.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-    <link rel="stylesheet" href="/public/CSS/home.css">
+    <link rel="stylesheet" href="../CSS/home.css">
 </head>
 
-<body>
-        <!--<nav>
-        <!-- Icone que compacta as operações de navegação.  
-        <input type="checkbox" id="check">
-        <label for="check" class="checkBtn">
-            <img src="../IMG/barramenu.png" width="50px" height="50px">
-        </label>
-        <!-- Imagem contendo o logo da MRV.  
-        <a href="/public/"><label class="logo"><img src="../IMG/logoMRV_nova.png" width="162px" height="70px"
-                    alt="Logo Mrv"></label></a>
-        <ul>
-            <!-- Listas de opções do menu.  
-            <li><a href="../HTML/empreiteira.html">Empreiteiras</a></li>
-            <li><a href="../HTML/contratos.html">Contratos</a></li>
-            <li><a href="../HTML/mrvChamados.html">Chamados</a></li>
-            <li><a href="../HTML/historicoObras.html">Obras</a></li>
-        </ul>
-    </nav>-->
+<body data-bs-spy="scroll" data-bs-target=".navbar">
+
+    <!-- HEADER -->
     <nav class="navbar navbar-expand-lg bg-success sticky-top">
         <div class="container">
             <a class="navbar-brand" href="/public/">
-                <img src="/public/IMG/logoMRV_nova.png" width="150px" height="145px">
+                <img src="..\IMG\logoMRV_nova.png" width="150px" height="145px">
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
                 aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -45,27 +34,31 @@
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto">
                     <li class="nav-item">
-                        <a class="nav-link" href="../HTML/empreiteira.html">Empreiteiras</a>
+                        <a class="nav-link" href="../HTML/empreiteira.html">EMPREITEIRAS</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="../HTML/contratos.html">Contratos</a>
+                        <a class="nav-link" href="../HTML/contratos.html">CONTRATOS</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="../HTML/mrvChamados.html">Chamados</a>
+                        <a class="nav-link" href="../HTML/mrvChamados.html">CHAMADOS</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="../HTML/historicoObras.html">Obras</a>
+                        <a class="nav-link" href="../HTML/historicoObras.html">OBRAS</a>
                     </li>
                 </ul>
             </div>
         </div>
     </nav>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@4.0/dist/fancybox.umd.js"></script>
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script src="/public/JS/main.js"></script>
     <!-- Tabela  -->
     <section class="grid">
         <div class="table">
             <!-- Header da Tabela.  -->
             <div class="texto">
-                <img src="../IMG/Histórico_Obras.png" width="55px" height="50px" alt="Chamados" class="file">
+                <img src="../IMG/iconeHistorico.png" width="55px" height="50px" alt="Chamados" class="file">
                 <h3 class="titulo">Obras</h3>
                 <a href="../HTML/criarObra.html"><button type="button" class="link" id="acompanhar"
                         name="acompanhar">Nova Obra</button></a>

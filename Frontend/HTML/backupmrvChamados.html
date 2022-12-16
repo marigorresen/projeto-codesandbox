@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chamados</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+    <link rel="stylesheet" href="../CSS/Chamados.css">
+    <script src="https://kit.fontawesome.com/f5b8112d40.js" crossorigin="anonymous"></script>
+    <script src="../JS/chamadosMobile.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <link rel="stylesheet" href="/public/CSS/home.css">
+</head>
+
+<body>
+        <!--<nav>
+        <!-- Icone que compacta as operações de navegação.  
+        <input type="checkbox" id="check">
+        <label for="check" class="checkBtn">
+            <img src="../IMG/barramenu.png" width="50px" height="50px">
+        </label>
+        <!-- Imagem contendo o logo da MRV.  
+        <a href="/public/"><label class="logo"><img src="../IMG/logoMRV_nova.png" width="162px" height="70px"
+                    alt="Logo Mrv"></label></a>
+        <ul>
+            <!-- Listas de opções do menu.  
+            <li><a href="../HTML/empreiteira.html">Empreiteiras</a></li>
+            <li><a href="../HTML/contratos.html">Contratos</a></li>
+            <li><a href="../HTML/mrvChamados.html">Chamados</a></li>
+            <li><a href="../HTML/historicoObras.html">Obras</a></li>
+        </ul>
+    </nav>-->
+    <nav class="navbar navbar-expand-lg bg-success sticky-top">
+        <div class="container">
+            <a class="navbar-brand" href="/public/">
+                <img src="/public/IMG/logoMRV_nova.png" width="150px" height="145px">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="../HTML/empreiteira.html">Empreiteiras</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="../HTML/contratos.html">Contratos</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="../HTML/mrvChamados.html">Chamados</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="../HTML/historicoObras.html">Obras</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <!-- Tabela  -->
+    <section class="grid">
+        <div class="table">
+            <!-- Header da Tabela.  -->
+            <div class="texto">
+                <img src="../IMG/file_verde-removebg-preview.png" width="55px" height="50px" alt="Chamados"
+                    class="file">
+                <h3 class="titulo">Chamados Recebidos</h3>
+                <p></p>
+            </div>
+            <hr class="espaco">
+            <!-- Body da Tabela.  -->
+            <div class="table-responsive-lg">
+                <table class="table table-bordered">
+                    <thead>
+                        <tr class="table-active">
+                            <th scope="col">N°</th>
+                            <th scope="col">Aberto</th>
+                            <th scope="col">Título de chamado</th>
+                            <th scope="col">Descriçao Resumida</th>
+                        </tr>
+                    </thead>
+                    <tbody id="tabelona">
+
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+    <script>
+        //Função que faz a requisição para a API e retorna os dados.
+        $(document).ready(() => {
+            users.list();
+        });
+        let contador = 0;//Variável que controla a quantidade de chamados.
+        // objeto que faz o get
+        var users = {
+
+            list() {
+                $.ajax({//Função que faz o GET
+                    url: '/readChamado',
+                    type: 'GET',
+                    success: data => {
+                        var tr = '';
+                        data.forEach(element => {
+                            contador += 1;
+                            
+                            tr += `<tr>`;
+                            tr += `<th scope="row"> ${contador} </th>`;
+                            tr += `<th scope="row"> ${element.data} </th>`;
+                            tr += `<td scope="row"> ${element.titulo} </td>`
+                            tr += `<td scope="row"> ${element.descricao} </td>`
+                            tr += `</tr>`
+                        });
+                        $('#tabelona').html(tr);
+                    }
+                });
+            }
+        }
+
+    </script>
+</body>
+
+</html>
